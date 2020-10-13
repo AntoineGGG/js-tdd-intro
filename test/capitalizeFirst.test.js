@@ -1,13 +1,24 @@
 const assert = require('assert');
-const capitalizeFirst = require('../capitalizeFirst');
+const capitalizeFirstLetter = require('../capitalizeFirst');
 
-// Check that capitalizeFirst is a function
-assert.strictEqual(typeof capitalizeFirst, 'function');
-// Check that capitalizeFirst accepts one argument
-assert.strictEqual(capitalizeFirst.length, 1);
-// Check that capitalizeFirst transforms javaScript correctly
-assert.strictEqual(capitalizeFirst('javaScript'), 'JavaScript');
-// Check that it works for a 1-character string
-assert.strictEqual(capitalizeFirst('z'), 'Z');
-// Check that it works for an empty string
-assert.strictEqual(capitalizeFirst(''), '');
+describe('capitalizeFirstLetter', () => {
+  it('is a function accepting one argument', () => {
+    assert.strictEqual(typeof capitalizeFirstLetter, 'function');
+    assert.strictEqual(capitalizeFirstLetter.length, 1);
+  });
+
+  it('transforms the sentence correctly', () => {
+    assert.strictEqual(
+      capitalizeFirstLetter('i am learning react'),
+      'I Am Learning React'
+    );
+  });
+
+  it('works with a &-character strin', () => {
+    assert.strictEqual(capitalizeFirstLetter('z'), 'Z');
+  });
+
+  it('works with an empty string', () => {
+    assert.strictEqual(capitalizeFirstLetter(''), '');
+  });
+});
