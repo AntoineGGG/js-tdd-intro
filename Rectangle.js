@@ -5,11 +5,7 @@ class Rectangle {
   }
 
   isSquare() {
-    if (this.a === this.b) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.a === this.b;
   }
 
   getArea() {
